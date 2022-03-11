@@ -1,0 +1,10 @@
+C:\Users\jazo0\source\repos\Interfaz de Entrada GANCEDO\bin\Debug\Interfaz de Entrada GANCEDO.exe.config
+C:\Users\jazo0\source\repos\Interfaz de Entrada GANCEDO\bin\Debug\Interfaz de Entrada GANCEDO.exe
+C:\Users\jazo0\source\repos\Interfaz de Entrada GANCEDO\bin\Debug\Interfaz de Entrada GANCEDO.pdb
+C:\Users\jazo0\source\repos\Interfaz de Entrada GANCEDO\obj\Debug\Interfaz de Entrada GANCEDO.csproj.AssemblyReference.cache
+C:\Users\jazo0\source\repos\Interfaz de Entrada GANCEDO\obj\Debug\Interfaz_de_Entrada_GANCEDO.Form1.resources
+C:\Users\jazo0\source\repos\Interfaz de Entrada GANCEDO\obj\Debug\Interfaz_de_Entrada_GANCEDO.Properties.Resources.resources
+C:\Users\jazo0\source\repos\Interfaz de Entrada GANCEDO\obj\Debug\Interfaz de Entrada GANCEDO.csproj.GenerateResource.cache
+C:\Users\jazo0\source\repos\Interfaz de Entrada GANCEDO\obj\Debug\Interfaz de Entrada GANCEDO.csproj.CoreCompileInputs.cache
+C:\Users\jazo0\source\repos\Interfaz de Entrada GANCEDO\obj\Debug\Interfaz de Entrada GANCEDO.exe
+C:\Users\jazo0\source\repos\Interfaz de Entrada GANCEDO\obj\Debug\Interfaz de Entrada GANCEDO.pdb
