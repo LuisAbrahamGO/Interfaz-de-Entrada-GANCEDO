@@ -32,7 +32,6 @@ namespace Interfaz_de_Entrada_GANCEDO
                 int type = 0;
 
                 Comprobante comprobante = new Comprobante();
-                Concepto concepto = new Concepto();
 
                 while ((linea1 = reader.ReadLine()) != null)
                 {
@@ -76,38 +75,40 @@ namespace Interfaz_de_Entrada_GANCEDO
                             }
                         case "CONCEPTO":
                             {
+                                Concepto concepto = new Concepto();
+                                concepto.Codigo = LeerDato(reader, type);
+                                concepto.NoIdentificacion = LeerDato(reader, type);
+                                concepto.ClaveProdServ = LeerDato(reader, type);
+                                concepto.Descripcion = LeerDato(reader, type);
+                                concepto.ClaveUnidad = LeerDato(reader, type);
+                                concepto.Unidad = LeerDato(reader, type);
+                                concepto.Cantidad = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.ValorUnitario = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.DescuentoPorcentaje = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.DescuentoImporte = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.Importe = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.CONCEPTOIVA = Convert.ToInt32(LeerDato(reader, 1));
+                                concepto.BaseIVA = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.TasaIVA = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.ImporteIVA = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.CONCEPTOISR = Convert.ToInt32(LeerDato(reader, 1));
+                                concepto.BaseISR = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.TasaISR = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.ImporteISR = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.CONCEPTOIEPS = Convert.ToInt32(LeerDato(reader, 1));
+                                concepto.BaseIEPS = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.TasaIEPS = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.ImporteIEPS = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.RETENCIONIVA = Convert.ToInt32(LeerDato(reader, 1));
+                                concepto.BaseRetencionIVA = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.TasaRetencionIVA = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.ImporteRetencionIVA = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.RETENCIONISR = Convert.ToInt32(LeerDato(reader, 1));
+                                concepto.BaseRetencionISR = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.TasaRetencionISR = Convert.ToDecimal(LeerDato(reader, type));
+                                concepto.ImporteRetencionISR = Convert.ToDecimal(LeerDato(reader, type));
 
-                                    concepto.Codigo = LeerDato(reader, type);
-                                    concepto.NoIdentificacion = LeerDato(reader, type);
-                                    concepto.ClaveProdServ = LeerDato(reader, type);
-                                    concepto.Descripcion = LeerDato(reader, type);
-                                    concepto.ClaveUnidad = LeerDato(reader, type);
-                                    concepto.Unidad = LeerDato(reader, type);
-                                    concepto.Cantidad = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.ValorUnitario = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.DescuentoPorcentaje = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.DescuentoImporte = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.Importe = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.CONCEPTOIVA = Convert.ToInt32(LeerDato(reader, type));
-                                    concepto.BaseIVA = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.TasaIVA = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.ImporteIVA = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.CONCEPTOISR = Convert.ToInt32(LeerDato(reader, type));
-                                    concepto.BaseISR = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.TasaISR = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.ImporteISR = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.CONCEPTOIEPS = Convert.ToInt32(LeerDato(reader, type));
-                                    concepto.BaseIEPS = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.TasaIEPS = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.ImporteIEPS = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.RETENCIONIVA = Convert.ToInt32(LeerDato(reader, type));
-                                    concepto.BaseRetencionIVA = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.TasaRetencionISR = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.ImporteRetencionIVA = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.RETENCIONISR = Convert.ToInt32(LeerDato(reader, type));
-                                    concepto.BaseRetencionISR = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.TasaRetencionISR = Convert.ToDecimal(LeerDato(reader, type));
-                                    concepto.ImporteRetencionISR = Convert.ToDecimal(LeerDato(reader, type));
+                                comprobante.conceptos.Add(concepto);
 
                                 break;
                             }
@@ -157,7 +158,7 @@ namespace Interfaz_de_Entrada_GANCEDO
             string linea = reader.ReadLine();
             string[] datosLinea = linea.Split('=');
 
-            dato = datosLinea[1].Trim();
+            dato = datosLinea.Length == 2 ? datosLinea[1].Trim() : "";
 
             if (tipo == 1)
             {
